@@ -1,0 +1,15 @@
+{
+    "name": "lumexoled",
+    "version": "0.0.1",
+    "description": "Lumex OLED driver for micro:bit",
+    "license": "MIT",
+    "dependencies": {
+        "core": "*"
+    },
+    "files": [
+        "README.md",
+        "main.ts",
+        "_locales/zh/lumexoled-strings.json"
+    ],
+    "public": true
+}
