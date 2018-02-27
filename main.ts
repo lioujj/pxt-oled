@@ -153,7 +153,7 @@ namespace lumexoled {
     //% weight=85 blockGap=0 blockExternalInputs=true line.min=0 line.max=7 column.min=0 column.max=20
     export function putString(myStr: string, mySize: fontSize, line: number, column: number, showState: showNow): void {
         if (myStr.length > 0) {
-            sending = true
+            //sending = true
             let maxLength = myStr.length
             if (maxLength > 16)
                 maxLength = 16
@@ -180,7 +180,7 @@ namespace lumexoled {
                     myBuff.setNumber(NumberFormat.UInt8BE, i + 3, myStr.charCodeAt(i))
                 }
                 serial.writeBuffer(myBuff)
-                checkSending(false)
+                //checkSending(false)
             }
             if (showState == 0xd1) {
                 OLED_display()
