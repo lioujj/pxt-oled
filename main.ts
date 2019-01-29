@@ -68,7 +68,7 @@ namespace lumexoled {
     //% blockId="OLED_setSerial" block="set OLED RX to %pinRX|TX to %pinTX|BaudRate %br"
     //% weight=100 blockExternalInputs=true blockGap=0
     export function OLED_setSerial(pinRX: SerialPin, pinTX: SerialPin, br: BaudRate): void {
-        basic.pause(2500)
+        basic.pause(100)
         serial.redirect(
             pinRX,
             pinTX,
@@ -95,8 +95,8 @@ namespace lumexoled {
         let myBuff1 = pins.createBuffer(1)
         myBuff1.setNumber(NumberFormat.UInt8BE, 0, 0xd0)
         serial.writeBuffer(myBuff1)
-        serial.readUntil("E")
-        basic.pause(10)
+        //serial.readUntil("E")
+        basic.pause(20)
     }
 
     //% blockId="OLED_on" block="turn OLED on"
@@ -396,4 +396,4 @@ namespace lumexoled {
         serial.readUntil("E")
         basic.pause(10)
     }
-}  
+}   
