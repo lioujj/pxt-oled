@@ -184,14 +184,16 @@ namespace lumexoled {
         myBuff2.setNumber(NumberFormat.UInt8BE, 0, myType)
         myBuff2.setNumber(NumberFormat.UInt8BE, 1, myID)
         serial.writeBuffer(myBuff2)
-        serial.readUntil("E")
-        basic.pause(10)
+        //serial.readUntil("E")
+        //basic.pause(10)
         for (let i = 0; i <= myArray.length - 1; i++) {
             myBuff1.setNumber(NumberFormat.UInt8BE, 0, (myPositive == 1 ? myArray[i] : 0xff - myArray[i]))
             serial.writeBuffer(myBuff1)
-            serial.readUntil("E")
-            basic.pause(10)
+            //serial.readUntil("E")
+            //basic.pause(10)
         }
+        serial.readUntil("E")
+        basic.pause(10)
     }
 
     //% blockId="OLED_showImage" block="show image type: %myType|image ID: %myID|on x: %x|y: %y|display %showState"
